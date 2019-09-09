@@ -2,3 +2,4 @@
 *.log
 \target
 \bin
+\some_new_directory
