@@ -100,7 +100,7 @@
     <Compile Include="Models\Route.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="PageObject\BookAFlightPage.cs" />
-    <Compile Include="PageObject\HelpPage.cs" />
+    <Compile Include="PageObject\LearnMorePage.cs" />
     <Compile Include="PageObject\HomePage.cs" />
     <Compile Include="PageObject\LogInPage.cs" />
     <Compile Include="PageObject\PlanningPage.cs" />

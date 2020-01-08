@@ -26,19 +26,18 @@ namespace Framework.Test
         const string ErrorTextForCheckIn =
             "Please select your departure city";
 
-        const string HelpPageUrl = "https://www.emirates.com/english/help/";
+        const string LearnMorePageUrl = "https://www.emirates.com/english/experience/my-emirates-pass/";
 
         const string PlanningPageUrl = "https://www.emirates.com/english/manage-booking/";
 
         static private ILog Log = LogManager.GetLogger(typeof(TestClass));
 
         [Test]
-        public void CheckHelpPage()
+        public void CheckLearnMorePage()
         {
-            HelpPage helpPage = new HomePage(Driver)
-                .GoToHelpPage();
+            LearnMorePage learnPage = new HomePage(Driver).GoToLearnMorePage();
             Log.Info("CookieAcceptClick");
-            Assert.AreEqual(helpPage.GetUrl(), HelpPageUrl);
+            Assert.AreEqual(learnPage.GetUrl(), LearnMorePageUrl);
         }
 
         [Test]

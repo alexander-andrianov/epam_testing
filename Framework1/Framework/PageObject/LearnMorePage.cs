@@ -8,12 +8,12 @@ using OpenQA.Selenium.Support.UI;
 
 namespace Framework.PageObject
 {
-    public class HelpPage
+    public class LearnMorePage
     {
         private IWebDriver webDriver;
         private WebDriverWait Wait;
 
-        public HelpPage(IWebDriver driver)
+        public LearnMorePage(IWebDriver driver)
         {
             this.webDriver = driver;
             Wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));

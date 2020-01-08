@@ -23,8 +23,8 @@ namespace Framework.PageObject
         [FindsBy(How = How.XPath, Using = "//a[@id='login-nav-link']")]
         private IWebElement PlanningButton;
 
-        [FindsBy(How = How.XPath, Using = "//a[@class='js-megalinks-toplevel megalinks-toplevel']")]
-        private IWebElement HelpButton;
+        [FindsBy(How = How.XPath, Using = "//a[@class='cta cta--small cta--primary hero__cta ']")]
+        private IWebElement LearnMoreButton;
 
         [FindsBy(How = How.XPath, Using = "//dt[contains(., 'Flight status')]")]
         private IWebElement FlightStatus;
@@ -62,11 +62,11 @@ namespace Framework.PageObject
             return new LogInPage(webDriver);
         }
 
-        public HelpPage GoToHelpPage()
+        public LearnMorePage GoToLearnMorePage()
         {
-            HelpButton.Click();
-            Log.Info("Go To HelpPage");
-            return new HelpPage(webDriver);
+            LearnMoreButton.Click();
+            Log.Info("Go To LearnPage");
+            return new LearnMorePage(webDriver);
         }
 
         public HomePage GoToFlightStatus()
