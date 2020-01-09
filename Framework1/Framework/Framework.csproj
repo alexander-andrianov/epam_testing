@@ -103,7 +103,7 @@
     <Compile Include="PageObject\LearnMorePage.cs" />
     <Compile Include="PageObject\HomePage.cs" />
     <Compile Include="PageObject\LogInPage.cs" />
-    <Compile Include="PageObject\PlanningPage.cs" />
+    <Compile Include="PageObject\ManageBookingPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PageObject\SelectFlightsPage.cs" />
     <Compile Include="Service\RouteCreator.cs" />

@@ -8,7 +8,7 @@ using OpenQA.Selenium.Support.UI;
 
 namespace Framework.PageObject
 {
-    public class PlanningPage
+    public class ManageBookingPage
     {
         private IWebDriver webDriver;
         private WebDriverWait Wait;
@@ -16,7 +16,7 @@ namespace Framework.PageObject
         [FindsBy(How = How.XPath, Using = " //li[@id = 'tln-nav-1071']")]
         private IWebElement BookAFlightButton;
 
-        public PlanningPage(IWebDriver driver)
+        public ManageBookingPage(IWebDriver driver)
         {
             this.webDriver = driver;
             Wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));

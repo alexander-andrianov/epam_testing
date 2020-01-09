@@ -28,7 +28,7 @@ namespace Framework.Test
 
         const string LearnMorePageUrl = "https://www.emirates.com/english/experience/my-emirates-pass/";
 
-        const string PlanningPageUrl = "https://www.emirates.com/english/manage-booking/";
+        const string ManageBookingUrl = "https://fly10.emirates.com/CKIN/OLCI/FlightInfo.aspx";
 
         static private ILog Log = LogManager.GetLogger(typeof(TestClass));
 
@@ -50,6 +50,27 @@ namespace Framework.Test
                 .LogInButtonClick()
                 .ErrorFormIsEnabled();
             Assert.IsTrue(enabledErrorForm);
+        }
+
+        [Test]
+        public void CreateIncorrectFlight()
+        {
+            bool enabledErrorForm = new HomePage(Driver)
+                .ContinueButtonClick()
+                .SearchButtonClick()
+                .ErrorFormIsEnabled();
+            Assert.IsTrue(enabledErrorForm);
+        }
+
+        [Test]
+        public void ManageIncorrectBooking()
+        {
+            UserCreator userCreator = new UserCreator();
+            HomePage manageBookingPage = new HomePage(Driver)
+                .ManageBookingClick()
+                .InputLastNameAndBookingReference(userCreator.LastNameAndBookingReferenceProperties())
+                .CheckInButtonClick();
+            Assert.AreEqual(manageBookingPage.GetUrl(), ManageBookingUrl);
         }
     }
 }

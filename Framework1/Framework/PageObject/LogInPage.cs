@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.ObjectModel;
+using System.Linq;
 using Framework.Models;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -48,7 +50,13 @@ namespace Framework.PageObject
 
         public bool ErrorFormIsEnabled()
         {
-            return ErrorForm.Enabled;
+            return IfErrorElementExists();
+        }
+
+        public bool IfErrorElementExists()
+        {
+            var elements = webDriver.FindElements(By.XPath("//*[@class = 'login-error login-form__error']"));
+            return (elements.Count >= 1) ? elements.First().Enabled : false;
         }
     }
 }
